@@ -3,30 +3,16 @@ numbers = [1,4,5,8,7] # 2 iteração
 
 
 def bubble_sort(arr)
-    # Primeira passada:
-    index = 0
-    current = arr[index] #5
-    next_number = arr[index+1] #1
-    while (current > next_number) do
-        arr[index] = next_number #4
-        index++ #2
-        arr[index] = current #5
-        next_number = arr[index+1] #8
-    end
-    
-    #  Segunda passada:
-    arr.each_with_index do |i, index|
-        if (i > next_number)
-            arr[index] = next_number #4
-            index++ #2
-            arr[index] = current #5
-            next_number = arr[index+1] #8
-        else
-            index+2
-            next_number = arr[index]
+    arr_length = arr.length
+    for i in 0..arr_length do
+        for j in 0..arr_length - i - 1 do
+            if (arr[j] > arr[j+1])
+                temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
+            end
         end
     end
-    return arr
 end
 
-puts buble_sort(numbers)
+puts bubble_sort(numbers)
