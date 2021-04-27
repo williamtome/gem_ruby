@@ -1,27 +1,32 @@
 numbers = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
 number = 55
 
-def jump(arr, x, left, right)
+def jump(arr, x)
     size_arr = arr.length
-    pulo = Math.sqrt(size_arr)
-    index = left+pulo
-
-    if (arr[index] == x)
-        return true
-    elsif (arr[index] < x)
-        left = index
-        return jump(arr, x, left, right)
-    else
-        previous_jump = index - pulo
-        for i in arr[previous_jump] do
-            if(i === x)
-                return true
-            end
-            previous_jump += 1
+    step = Math.sqrt(size_arr).to_i
+    prev = 0
+    
+    while arr[[step, size_arr].min - 1] < x
+        prev = step
+        step += Math.sqrt(size_arr)
+        if prev >= size_arr
+            return -1
         end
-        return false
     end
+
+    while arr[prev] < x
+        prev += 1
+        if prev == [step, size_arr].min
+            return -1
+        end
+    end
+
+    if arr[prev] == x
+        return prev
+    end
+
+    return -1
     
 end
 
-puts jump(numbers, number, 0, numbers.length - 1)
+puts jump(numbers, number)
