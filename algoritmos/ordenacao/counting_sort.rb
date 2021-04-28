@@ -1,17 +1,14 @@
-numbers = [4,3,1,2,0]
-
 def counting_sort(arr)
 
     k = arr.length
     new_arr = Array.new(k, 0)
-    for num in arr do
-        new_arr.length.times do |idx|
-            if num == idx
-                puts new_arr[idx]++
-            end
-        end
+
+    arr.each do |item|
+        new_arr[item] += 1
     end
+    new_arr
     
 end
 
-counting_sort(numbers)
+numbers = [4,3,1,2,2,4,0]
+puts counting_sort(numbers).to_s
