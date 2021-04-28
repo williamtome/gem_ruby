@@ -1,38 +1,26 @@
-numeros = [4,7,2,6,4,1,8,2]
+def merge_sort(lista)
+    return lista if lista.length <= 1
 
-def merge_sort(lista, inicio=0, fim=nil)
-    if fim == nil
-        fim = lista.size - 1
-    end
-
-    if (fim - inicio) > 1
-        meio = (fim + inicio) / 2
-        merge_sort(lista, inicio, meio)
-        merge_sort(lista, meio, fim)
-        merge(lista, inicio, meio, fim)
-    end
+    meio = (lista.length / 2).floor
+    lista_esquerda = merge_sort(lista[0..(meio -1)])
+    lista_direita = merge_sort(lista[meio..lista.length - 1])
+    
+    merge(lista_esquerda, lista_direita)
 end
 
-def merge(lista, inicio, meio, fim)
-    left = lista[inicio..meio]
-    right = lista[meio+1..fim]
-    top_left, top_right = 0,0
-    for k in inicio..fim
-        if top_left >= left.length
-            lista[k] = right[top_right]
-            top_right + 1
-        elsif top_right >= right.length
-            lista[k] = left[top_left]
-            top_left + 1
-        elsif left[top_left] < right[top_right]
-            lista[k] = left[top_left]
-            top_left + 1
+def merge(primeira_lista, segunda_lista)
+    ordenado = []
+    
+    until primeira_lista.empty? || segunda_lista.empty?
+        if primeira_lista.first <= segunda_lista.first
+            ordenado << primeira_lista.shift
         else
-            lista[k] = right[top_right]
-            top_right + 1
+            ordenado << segunda_lista.shift
         end
-        k = k + 1
     end
+
+    ordenado.concat(primeira_lista).concat(segunda_lista)
 end
 
+numeros = [4,7,2,6,4,1,8,2]
 puts merge_sort(numeros)
