@@ -8,14 +8,14 @@ def maximize_array(list, k)
     while i <= k do
         min = +2147483647
         index = -1
+        # return min
 
-        while j < n-1 do
-            if list[j] < min
+        for j in 0..(n-1) do
+            if j<(n-1) && list[j] < min
                 min = list[j]
                 index = j
             end
-            puts list[j]
-            j += 1
+            j = j + 1
         end
         
         i += 1
