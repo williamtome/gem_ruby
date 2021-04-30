@@ -1,36 +1,18 @@
 def maximize_array(list, k)
 
-    # tamanho do array
     n = list.length
     i = 1
     j = 0
 
-    while i <= k do
-        min = +2147483647
-        index = -1
-        # return min
-
-        for j in 0..(n-1) do
-            if j<(n-1) && list[j] < min
-                min = list[j]
-                index = j
-            end
-            j = j + 1
-        end
+    k.times do
         
-        i += 1
+        min, min_index = list.each_with_index.min
+        break if min == 0
 
-        if min == 0
-            break
-        end
-
-        list[index] = -list[index]
+        list[min_index] = -list[min_index]
     end
     
-    sum = 0
-    for i in 0..n-1 do
-        sum += list[i]
-    end
+    list.sum 
 
 end
 
