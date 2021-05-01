@@ -25,3 +25,4 @@ def count(string)
 end
 
 puts count("#GeeKs01fOr@gEEks07") # Maiusculas: 5, Minusculas: 8, Números: 4, Caracteres Especiais: 2
+puts count("*GeEkS4GeEkS*") # Maiusculas: 6, Minusculas: 4, Números: 1, Caracteres Especiais: 2
