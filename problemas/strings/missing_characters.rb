@@ -13,5 +13,5 @@ def pangram(string)
     list.all?(true)
 end
 
-str = "The quick brown fox jumps over the lazy dog"
-puts pangram(str)
+puts pangram("The quick brown fox jumps over the lazy dog") # true
+puts pangram("The quick brown fox jumps over the dog") # false
