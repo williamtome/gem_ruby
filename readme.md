@@ -1,8 +1,8 @@
-# Linguagem 2021 Ruby
+# Gem Ruby
 
-> Algoritmos em Ruby
+> Biblioteca com algoritmos em Ruby
 
-O objetivo deste projeto é praticar/resolver algoritmos e problemas de programação usando a linguagem Ruby.
+Este projeto está relacionado à fase 2 da mentoria onde iremos construir uma gem (biblioteca) Ruby com os algoritmos feitos durante a fase 1 - [Link para o repositório](https://github.com/williamtome/linguagem-2021-ruby). Esta gem terá cobertura de testes.
 
 ## Reconhecimento
 
