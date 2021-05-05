@@ -23,4 +23,4 @@ def merge(primeira_lista, segunda_lista)
 end
 
 numeros = [4,7,2,6,4,1,8,2]
-puts merge_sort(numeros)
+merge_sort(numeros).to_s
