@@ -2,6 +2,7 @@
 
 require_relative "gem_ruby/algoritmos/busca/jump_search"
 require_relative "gem_ruby/algoritmos/busca/binary_search"
+require_relative "gem_ruby/algoritmos/busca/linear_search"
 
 module GemRuby
   class Error < StandardError; end
