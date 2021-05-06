@@ -10,6 +10,7 @@ require_relative "gem_ruby/algoritmos/ordenacao/bubble_sort"
 require_relative "gem_ruby/algoritmos/ordenacao/selection_sort"
 require_relative "gem_ruby/algoritmos/greedy/maximize_array"
 require_relative "gem_ruby/problemas/strings/common_characters"
+require_relative "gem_ruby/problemas/array/find_three"
 
 module GemRuby
   class Error < StandardError; end
