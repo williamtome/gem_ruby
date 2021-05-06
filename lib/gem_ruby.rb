@@ -3,6 +3,7 @@
 require_relative "gem_ruby/algoritmos/busca/jump_search"
 require_relative "gem_ruby/algoritmos/busca/binary_search"
 require_relative "gem_ruby/algoritmos/busca/linear_search"
+require_relative "gem_ruby/algoritmos/busca/find_missing_number"
 require_relative "gem_ruby/algoritmos/ordenacao/merge_sort"
 require_relative "gem_ruby/algoritmos/ordenacao/counting_sort"
 require_relative "gem_ruby/algoritmos/ordenacao/bubble_sort"
