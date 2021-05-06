@@ -1,8 +1,5 @@
 def find_three(array)
-    if array.size < 3
-        puts 'entrada inválida'
-        return
-    end
+    return 'entrada inválida' if array.size < 3
     
     terceiro = primeiro = segundo = array.min
     
@@ -19,10 +16,10 @@ def find_three(array)
         end
     end
 
-    puts "primeiro: " + primeiro.to_s + ", segundo: " + segundo.to_s + ", terceiro: " + terceiro.to_s
+    [primeiro, segundo, terceiro]
 end
 
-# puts find_three([10, 4, 3, 50, 23, 90]) # primeiro: 90, segundo: 50, terceiro: 23
-# puts find_three([12, 13, 1, 10, 34, 1]) # primeiro: 34, segundo: 13, terceiro: 12
-# puts find_three([1,8,4]) # primeiro: 8, segundo: 4, terceiro: 1
-puts find_three([2,7]) # entrada inválida
+puts find_three([10, 4, 3, 50, 23, 90]).to_s # primeiro: 90, segundo: 50, terceiro: 23
+# puts find_three([12, 13, 1, 10, 34, 1]).to_s # primeiro: 34, segundo: 13, terceiro: 12
+# puts find_three([1,8,4]).to_s # primeiro: 8, segundo: 4, terceiro: 1
+# puts find_three([2,7]).to_s # entrada inválida
