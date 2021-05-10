@@ -18,4 +18,4 @@ def binary_search(arr_numbers, search_number)
     return binary_search_recursive(arr_numbers, search_number, 0, arr_numbers.length - 1)
 end
 
-# binary_search([2,5,8,12,16,23,38,56,72,91], 72)
+binary_search([2,5,8,12,16,23,38,56,72,91], 72)
