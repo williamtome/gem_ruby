@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Algoritmos do
   describe ".linear_search" do
     it "-1" do

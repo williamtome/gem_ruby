@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Algoritmos
   class BinarySearch
     def run(arr_numbers, search_number, first, last)
