@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Algoritmos do
-  describe ".linear_search" do
+  describe ".binary_search" do
     it "-1" do
       arr = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
       number = 71
