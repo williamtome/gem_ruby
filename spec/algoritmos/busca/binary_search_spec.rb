@@ -1,10 +1,12 @@
-RSpec.describe Algoritmos::Busca do
+RSpec.describe Algoritmos do
   describe ".linear_search" do
     it "-1" do
       arr = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
       number = 71
+      first = 0
+      last = arr.length - 1
 
-      result = Busca::BinarySearch.new.run(arr, number)
+      result = Algoritmos::BinarySearch.new.run(arr, number, first, last)
 
       expect(result).to eq(-1)
     end
