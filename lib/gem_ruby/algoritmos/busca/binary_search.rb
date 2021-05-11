@@ -1,23 +1,17 @@
-module Algoritmos::Busca
+module Algoritmos
   class BinarySearch
-    def run(arr_numbers, search_number)
-      first = 0
-      last = arr_numbers.length - 1
-      mid = last / 2
+    def run(arr_numbers, search_number, first, last)
+      return -1 if first > last
 
-      loop do
-        return mid if arr_numbers[mid] == search_number
-        break if first == last
+      mid = (first + last) / 2
 
-        if search_number < arr_numbers[mid]
-          last = mid - 1
-        else
-          first = mid + 1
-        end
-        mid = (first + last) / 2
+      return mid if arr_numbers[mid] == search_number
+
+      if search_number < arr_numbers[mid]
+        run(arr_numbers, search_number, first, mid - 1)
+      else
+        run(arr_numbers, search_number, mid + 1, last)
       end
-
-      -1
     end
   end
 end
