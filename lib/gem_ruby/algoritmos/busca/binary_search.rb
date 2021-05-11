@@ -1,21 +1,23 @@
-def binary_search_recursive(arr_numbers, search_number, left, right)
-    if (left > right)
-        return -1
-    end
-    
-    mid = (left + right) / 2;
-    
-    if (arr_numbers[mid] == search_number)
-        return mid;
-    elsif (search_number < arr_numbers[mid])
-        return binary_search_recursive(arr_numbers, search_number, left, mid - 1);
-    else
-        return binary_search_recursive(arr_numbers, search_number, mid + 1, right);
-    end
-end
+module Algoritmos::Busca
+  class BinarySearch
+    def run(arr_numbers, search_number)
+      first = 0
+      last = arr_numbers.length - 1
+      mid = last / 2
 
-def binary_search(arr_numbers, search_number)
-    return binary_search_recursive(arr_numbers, search_number, 0, arr_numbers.length - 1)
-end
+      loop do
+        return mid if arr_numbers[mid] == search_number
+        break if first == last
 
-binary_search([2,5,8,12,16,23,38,56,72,91], 72)
+        if search_number < arr_numbers[mid]
+          last = mid - 1
+        else
+          first = mid + 1
+        end
+        mid = (first + last) / 2
+      end
+
+      -1
+    end
+  end
+end
