@@ -14,6 +14,7 @@ require_relative "gem_ruby/problemas/strings/count"
 require_relative "gem_ruby/problemas/array/find_three"
 
 module GemRuby
+  module Algoritmos; end
   class Error < StandardError; end
   # Your code goes here...
 end
