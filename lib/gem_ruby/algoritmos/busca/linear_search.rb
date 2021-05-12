@@ -1,10 +1,10 @@
-def linear_search(arr_numbers, number)
-    arr_numbers.each_with_index do |item, index|
-        if item === number
-            return index
-        end
-    end
-    return -1
-end
+# frozen_string_literal: true
 
-linear_search([10,20,80,30,60,50,110,100,130,170], 110)
+module Algoritmos
+  class LinearSearch
+    def run(arr_numbers, number)
+      arr_numbers.each_with_index { |item, index| return index if item == number }
+      -1
+    end
+  end
+end
