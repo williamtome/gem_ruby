@@ -1,25 +1,27 @@
-def find_three(array)
-    return 'entrada inválida' if array.size < 3
-    
-    terceiro = primeiro = segundo = array.min
-    
-    for i in 0..array.size - 1
-        if array[i] > primeiro
-            terceiro = segundo
-            segundo = primeiro
-            primeiro = array[i]
-        elsif array[i] > segundo
-            terceiro = segundo
-            segundo = array[i]
-        elsif array[i] > terceiro
-            terceiro = array[i]
+# frozen_string_literal: true
+
+module Problemas
+  module Array
+    class FindThree
+      def run(array)
+        return "entrada inválida" if array.size < 3
+
+        three = first = second = array.min
+        (0..array.size - 1).each do |index|
+          if array[index] > first
+            three = second
+            second = first
+            first = array[index]
+          elsif array[index] > second
+            three = second
+            second = array[index]
+          elsif array[index] > three
+            three = array[index]
+          end
         end
+
+        [first, second, three]
+      end
     end
-
-    [primeiro, segundo, terceiro]
+  end
 end
-
-puts find_three([10, 4, 3, 50, 23, 90]).to_s # primeiro: 90, segundo: 50, terceiro: 23
-# puts find_three([12, 13, 1, 10, 34, 1]).to_s # primeiro: 34, segundo: 13, terceiro: 12
-# puts find_three([1,8,4]).to_s # primeiro: 8, segundo: 4, terceiro: 1
-# puts find_three([2,7]).to_s # entrada inválida
