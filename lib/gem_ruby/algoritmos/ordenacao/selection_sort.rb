@@ -1,18 +1,27 @@
-def selection_sort(array)
-    length = array.size - 1
+# frozen_string_literal: true
 
-    length.times do |i|
-        min, min_index = array[i], i
-        index = i
+module Algoritmos
+  module Ordenacao
+    class SelectionSort
+      def run(array)
+        length = array.size - 1
+        length.times do |i|
+          min = array[i]
+          min_index = i
+          index = i
 
-        (index...array.size).each do |j|
-            min, min_index = array[j], j if array[j] < min
+          (index...array.size).each do |j|
+            if array[j] < min
+              min = array[j]
+              min_index = j
+            end
+          end
+
+          array[i], array[min_index] = array[min_index], array[i]
         end
 
-        array[i], array[min_index] = array[min_index], array[i]
+        array
+      end
     end
-
-    array
+  end
 end
-
-selection_sort([64, 25, 12, 22, 11]).to_s # [11,12,22,25,64]
