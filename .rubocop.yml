@@ -1,3 +1,21 @@
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+  
+Style/Documentation:
+  Enabled: false
+
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
@@ -8,3 +26,6 @@ Style/StringLiteralsInInterpolation:
 
 Layout/LineLength:
   Max: 120
+
+Layout/BeginEndAlignment:
+  Enabled: true

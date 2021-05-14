@@ -1,27 +1,26 @@
-def counting_sort(array)
-    counting_array = create_counting_array(array)
+# frozen_string_literal: true
 
-    sorted = Array.new(array.length)
+module Algoritmos
+  module Ordenacao
+    class CountingSort
+      def run(array)
+        counting_array = create_counting_array(array)
+        sorted = Array.new(array.length)
+        array.each do |item|
+          sorted[counting_array[item] - 1] = item
+          counting_array[item] -= 1
+        end
+        sorted
+      end
 
-    array.each do |item|
-        sorted[counting_array[item] - 1] = item
-        counting_array[item] -= 1
+      def create_counting_array(array)
+        return [] if array.length.zero?
+
+        counting_array = Array.new(array.max + 1, 0)
+        array.each { |item| counting_array[item] += 1 }
+        (1..(counting_array.length - 1)).each { |i| counting_array[i] += counting_array[i - 1] }
+        counting_array
+      end
     end
-
-    sorted
+  end
 end
-
-def create_counting_array(array)
-    return [] if array.length == 0
-    counting_array = Array.new(array.max + 1, 0)
-    array.each { |item| counting_array[item] += 1 }
-  
-    (1..(counting_array.length - 1)).each do |i|
-        counting_array[i] += counting_array[i - 1]
-    end
-  
-    counting_array
-end
-
-numbers = []
-counting_sort(numbers).to_s
