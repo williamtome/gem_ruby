@@ -9,6 +9,7 @@ module Algoritmos
           run(start, p - 1, array)
           run(p + 1, final, array)
         end
+        array
       end
 
       def partition(start, final, array)
