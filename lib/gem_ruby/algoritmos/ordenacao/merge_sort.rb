@@ -1,26 +1,28 @@
-def merge_sort(lista)
-    return lista if lista.length <= 1
+# frozen_string_literal: true
 
-    meio = (lista.length / 2).floor
-    lista_esquerda = merge_sort(lista[0..(meio -1)])
-    lista_direita = merge_sort(lista[meio..lista.length - 1])
-    
-    merge(lista_esquerda, lista_direita)
-end
+module Algoritmos
+  module Ordenacao
+    class MergeSort
+      def run(list)
+        return list if list.length <= 1
 
-def merge(primeira_lista, segunda_lista)
-    ordenado = []
-    
-    until primeira_lista.empty? || segunda_lista.empty?
-        if primeira_lista.first <= segunda_lista.first
-            ordenado << primeira_lista.shift
-        else
-            ordenado << segunda_lista.shift
+        middle = (list.length / 2).floor
+        left_list = run(list[0..(middle - 1)])
+        right_list = run(list[middle..list.length - 1])
+        merge(left_list, right_list)
+      end
+
+      def merge(first_list, second_list)
+        sorted = []
+        until first_list.empty? || second_list.empty?
+          sorted << if first_list.first <= second_list.first
+                      first_list.shift
+                    else
+                      second_list.shift
+                    end
         end
+        sorted.concat(first_list).concat(second_list)
+      end
     end
-
-    ordenado.concat(primeira_lista).concat(segunda_lista)
+  end
 end
-
-numeros = [4,7,2,6,4,1,8,2]
-merge_sort(numeros).to_s
