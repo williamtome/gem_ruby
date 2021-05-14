@@ -1,20 +1,18 @@
-def maximize_array(list, k)
+# frozen_string_literal: true
 
-    n = list.length
-    i = 1
-    j = 0
+module Algoritmos
+  module Greedy
+    class MaximizeArray
+      def run(list, step)
+        step.times do
+          min, min_index = list.each_with_index.min
+          break if min.zero?
 
-    k.times do
-        
-        min, min_index = list.each_with_index.min
-        break if min == 0
+          list[min_index] = -list[min_index]
+        end
 
-        list[min_index] = -list[min_index]
+        list.sum
+      end
     end
-    
-    list.sum 
-
+  end
 end
-
-arr = [-2, 0, 5, -1, 2]
-puts maximize_array(arr, 4).to_s
